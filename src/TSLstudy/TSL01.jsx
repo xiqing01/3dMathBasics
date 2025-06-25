@@ -1,8 +1,9 @@
 import { useRef } from "react"
 import { Canvas, useFrame } from "@react-three/fiber"
 import { OrbitControls } from "@react-three/drei"
-import { WebGPURenderer } from "three/webgpu"
 import { time, positionLocal, sin, vec3 } from "three/tsl"
+
+
 
 // 八面体组件
 const Octahedron = (props) => {
@@ -33,16 +34,8 @@ const Octahedron = (props) => {
 
 export default function TSL01() {
   return (
-    <div className="w-dvw h-dvh bg-gray-950">
-      <Canvas
-        camera={{ position: [0, 0, 5], fov: 60 }}
-        // WebGPU 渲染器设置
-        gl={async (glProps) => {
-          const renderer = new WebGPURenderer(glProps)
-          await renderer.init()
-          return renderer
-        }}
-      >
+    <>
+
         <OrbitControls />
         <spotLight
           position={[10, 10, 10]}
@@ -58,7 +51,7 @@ export default function TSL01() {
           intensity={Math.PI} 
         />
         <Octahedron />
-      </Canvas>
-    </div>
+
+    </>
   )
 }

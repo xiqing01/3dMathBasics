@@ -1,6 +1,6 @@
 import { useRef, useMemo } from 'react'
-import { Canvas, useFrame, extend, useThree } from '@react-three/fiber'
-import { shaderMaterial, OrbitControls } from '@react-three/drei'
+import {  useFrame, extend, useThree } from '@react-three/fiber'
+import { shaderMaterial } from '@react-three/drei'
 import * as THREE from 'three'
 
 /**
@@ -167,13 +167,11 @@ const SceneContent = () => {
   );
 };
 
-export const WavingPlane = () => {
+export default function WavingPlane()  {
   return (
-    <div className='w-dvw h-dvh bg-gray-900'>
-      <Canvas camera={{ position: [0, 0, 1], fov: 60 }}>
+    <>
         {/* 在这个技术中，我们不需要场景里的灯光和 OrbitControls，因为相机和光照都是在着色器内部代码里定义的 */}
         <SceneContent />
-      </Canvas>
-    </div>
+    </>
   );
 }

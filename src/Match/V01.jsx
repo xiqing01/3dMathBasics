@@ -2,7 +2,9 @@
 
 import * as THREE from "three";
 import { useRef } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
+import { useFrame } from "@react-three/fiber";
+import { TextDisplay } from "../lib/TextDisplay"
+import { Html } from "@react-three/drei"
 
 const Chaser = ({ targetPosition }) => {
   const meshRef = useRef();
@@ -44,7 +46,10 @@ export default function V01() {
   const targetPosition = new THREE.Vector3(0, 0, 0);
 
   return (
-    <Canvas camera={{ position: [0, 2, 1] }}>
+    <>
+      <Html>
+        <TextDisplay text="让一个物体追逐另一个物体" />
+      </Html>
       <ambientLight intensity={0.5} />
       <pointLight position={[10, 10, 10]} />
 
@@ -56,6 +61,6 @@ export default function V01() {
 
       {/* 追逐者 */}
       <Chaser targetPosition={targetPosition} />
-    </Canvas>
-  );
+    </>
+  )
 }
