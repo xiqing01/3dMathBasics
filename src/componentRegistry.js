@@ -1,5 +1,5 @@
 import V01 from "./Match/V01"
-import WavingPlane from "./Effect/WavingPlane"
+import WavingPlane from "./Example/WavingPlane"
 import TSL01 from "./TSLstudy/TSL01"
 
 export const components = {
@@ -10,7 +10,7 @@ export const components = {
   },
   'WavingPlane' : {
     name: 'WavingPlane',
-    category: 'Effect',
+    category: 'Example',
     component: WavingPlane
   },
   'TSL01' : {

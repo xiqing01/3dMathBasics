@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { components } from "./componentRegistry";
 import { CanvasWebGPU } from "./lib/CanvasWebGPU";
-import { Html } from "@react-three/drei";
+import { twMerge } from "tailwind-merge";
 
 const componentList = Object.entries(components).map(([key, value]) => ({
   id: key,
@@ -16,15 +16,15 @@ export default function App() {
     <>
       <div className=" bg-gray-950">
         <div className="flex flex-col md:flex-row justify-between items-start p-5 absolute z-50">
-          {["Match", "TSL Study", "Effect"].map((category) => (
-            <div key={category} className="m-5 my-0 ">
+          {["Match", "TSL Study", "Example"].map((category) => (
+            <div key={category} className={twMerge("m-5 my-2 lg:my-0")}>
               <h4 className="text-amber-100">{category}</h4>
               {componentList
                 .filter((item) => item.category === category)
                 .map((item) => (
                   <button
                     key={item.id}
-                    className="bg-gray-800 text-[12px] text-amber-50  mt-2 p-1 rounded hover:bg-gray-700"
+                    className={twMerge('bg-gray-800 text-[12px] text-amber-50  mt-1 p-1 rounded hover:bg-gray-700 min-w-16', selectedComponentId === item.id ? 'bg-blue-700' : '')}
                     // 点击按钮时，调用 setSelectedComponentId 更新 state
                     onClick={() => setSelectedComponentId(item.id)}
                   >
