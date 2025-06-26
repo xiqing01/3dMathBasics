@@ -1,0 +1,22 @@
+{
+  "categories": {
+    "Match": "数学",
+    "TSLStudy": "TSL 学习",
+    "Example": "示例"
+  },
+  "components": {
+    "V01": {
+      "name": "向量 01"
+    },
+    "WavingPlane": {
+      "name": "波浪平面"
+    },
+    "TSL01": {
+      "name": "TSL 01"
+    }
+  },
+  "languageSwitcher": {
+    "english": "English",
+    "chinese": "中文"
+  }
+}

@@ -1,1 +1,39 @@
 @import "tailwindcss";
+
+
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+.gradient-border-wrap {
+
+  background: linear-gradient(90deg, #ec4899, #38bdf8, #4ade80, #ec4899);
+  
+
+  background-size: 400% 200%;
+  
+
+  animation: gradient-animation 8s ease infinite;
+  
+
+  padding: 1.5px; 
+
+  border-radius: 0.375rem; 
+
+
+  transition: transform 0.2s ease-out;
+}
+
+.gradient-border-wrap:hover {
+    transform: scale(1.01);
+}

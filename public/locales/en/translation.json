@@ -1,0 +1,22 @@
+{
+  "categories": {
+    "Match": "Math",
+    "TSLStudy": "TSL Study",
+    "Example": "Example"
+  },
+  "components": {
+    "V01": {
+      "name": "Vector 01"
+    },
+    "WavingPlane": {
+      "name": "Waving Plane"
+    },
+    "TSL01": {
+      "name": "TSL 01"
+    }
+  },
+  "languageSwitcher": {
+    "english": "English",
+    "chinese": "中文"
+  }
+}
