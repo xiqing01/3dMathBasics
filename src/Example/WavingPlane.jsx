@@ -2,6 +2,7 @@ import { useRef, useMemo } from 'react'
 import {  useFrame, extend, useThree } from '@react-three/fiber'
 import { shaderMaterial } from '@react-three/drei'
 import * as THREE from 'three'
+import Hall from '../lib/Hall';
 
 /**
  * RaymarchMaterial
@@ -171,7 +172,7 @@ export default function WavingPlane()  {
   return (
     <>
         {/* 在这个技术中，我们不需要场景里的灯光和 OrbitControls，因为相机和光照都是在着色器内部代码里定义的 */}
-        <SceneContent />
+        <Hall />
     </>
   );
 }

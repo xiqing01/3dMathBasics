@@ -24,7 +24,7 @@ export default function App() {
 
   return (
     <>
-      <div className=" bg-gray-950">
+      <div className="bg-gray-950">
         <div className="flex flex-col md:flex-row justify-between items-start p-5 absolute z-50">
           {categories.map((category) => (
             <div key={category} className={twMerge("m-5 my-2 lg:my-0")}>
