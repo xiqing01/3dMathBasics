@@ -1,5 +1,5 @@
 import { useRef } from "react"
-import { Canvas, useFrame } from "@react-three/fiber"
+import {  useFrame } from "@react-three/fiber"
 import { OrbitControls } from "@react-three/drei"
 import { time, positionLocal, sin, vec3 } from "three/tsl"
 
