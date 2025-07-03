@@ -3,6 +3,7 @@ import { components } from "./componentRegistry";
 import { CanvasWebGPU } from "./lib/CanvasWebGPU";
 import { twMerge } from "tailwind-merge";
 import { useTranslation } from "react-i18next";
+import Hall from "./lib/Hall"
 
 const componentList = Object.entries(components).map(([key, value]) => ({
   id: key,
@@ -77,7 +78,8 @@ export default function App() {
 
         <div className="w-dvw h-dvh -z-10">
           <CanvasWebGPU>
-            {ActiveComponentInfo && <ActiveComponentInfo.component />}
+            <Hall >
+            </Hall>
           </CanvasWebGPU>
           <a
             href="https://github.com/xiqing01/3dMathBasics"
