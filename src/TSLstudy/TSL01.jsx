@@ -1,6 +1,5 @@
 import { useRef } from "react"
 import {  useFrame } from "@react-three/fiber"
-import { OrbitControls } from "@react-three/drei"
 import { time, positionLocal, sin, vec3 } from "three/tsl"
 
 
@@ -26,7 +25,7 @@ const Octahedron = (props) => {
 
   return (
     <mesh {...props} ref={meshRef}>
-      <octahedronGeometry />
+      <octahedronGeometry args={[0.4, 0]} />
       <meshStandardNodeMaterial colorNode={colorLogic} />
     </mesh>
   )
@@ -35,23 +34,7 @@ const Octahedron = (props) => {
 export default function TSL01() {
   return (
     <>
-
-        <OrbitControls />
-        <spotLight
-          position={[10, 10, 10]}
-          angle={0.15}
-          penumbra={1}
-          decay={0}
-          intensity={Math.PI}
-        />
-        <ambientLight intensity={Math.PI / 2} />
-        <pointLight 
-          position={[-10, -10, -10]} 
-          decay={0} 
-          intensity={Math.PI} 
-        />
         <Octahedron />
-
     </>
   )
 }

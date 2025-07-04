@@ -79,6 +79,13 @@ export default function App() {
         <div className="w-dvw h-dvh -z-10">
           <CanvasWebGPU>
             <Hall >
+              <group position={[0,0,1.8]} >
+                <mesh>
+                  {ActiveComponentInfo && <ActiveComponentInfo.component />}
+                </mesh>
+                
+                
+              </group>
             </Hall>
           </CanvasWebGPU>
           <a

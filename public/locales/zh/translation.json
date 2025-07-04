@@ -6,13 +6,15 @@
   },
   "components": {
     "V01": {
-      "name": "向量 01"
+      "name": "向量 01",
+      "text": "向量：一个方向和多远的“位移”。"
     },
     "WavingPlane": {
       "name": "波浪平面"
     },
     "TSL01": {
-      "name": "TSL 01"
+      "name": "TSL 01",
+      "text":"旋转变色八面体"
     }
   },
   "languageSwitcher": {

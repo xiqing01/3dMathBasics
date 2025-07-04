@@ -8,6 +8,7 @@ import {
   mix,
   timerLocal
 } from 'three/tsl'
+import { BackSide, FrontSide, DoubleSide } from 'three'
 
 // ====================================================================
 // 1. Reusable Fractal Noise Material Component
@@ -32,6 +33,7 @@ export const FractalNoiseMaterial = ({
   lacunarity = 2.3,
   diminish = 0.45,
   timeScale = 0.03,
+  side = FrontSide,
   ...props 
 }) => {
   // --- Memoize TSL Node ---
@@ -89,5 +91,5 @@ export const FractalNoiseMaterial = ({
   // Spread other props like `roughness` to the material.
   // 返回 R3F 材质组件，将生成的 TSL `colorNode` 传递给其 `colorNode` 属性。
   // 同时将 `roughness` 等其他属性展开传递给该材质。
-  return <meshStandardNodeMaterial colorNode={colorNode} {...props} />;
+  return <meshStandardNodeMaterial colorNode={colorNode} {...props} side={side} />;
 };

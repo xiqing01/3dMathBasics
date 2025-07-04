@@ -24,7 +24,7 @@ const Chaser = ({ targetPosition }) => {
 
     directionVector.normalize()
 
-    const speed = 2 * delta
+    const speed = 0.2 * delta
     console.log(delta)
     directionVector.multiplyScalar(speed)
     meshRef.current.position.add(directionVector)
@@ -35,27 +35,22 @@ const Chaser = ({ targetPosition }) => {
   
 
   return (
-    <mesh ref={meshRef} position={[5, 0, 0]}>
-      <sphereGeometry args={[2, 32, 32]} />
+    <mesh ref={meshRef} position={[0, 0, 0.35]}>
+      <sphereGeometry args={[0.2]} />
       <meshStandardMaterial color="red" />
     </mesh>
   );
 };
 
 export default function V01() {
-  const targetPosition = new THREE.Vector3(0, 0, 0);
+  const targetPosition = new THREE.Vector3(0, 0, -0.3);
 
   return (
     <>
-      <Html>
-        <TextDisplay text="让一个物体追逐另一个物体" />
-      </Html>
-      <ambientLight intensity={0.5} />
-      <pointLight position={[10, 10, 10]} />
-
+      
       {/* 目标 */}
       <mesh position={targetPosition}>
-        <sphereGeometry args={[0.2, 32, 32]} />
+        <sphereGeometry args={[0.15]} />
         <meshStandardMaterial color="blue" />
       </mesh>
 
