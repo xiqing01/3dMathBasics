@@ -7,7 +7,7 @@ import "./il8n.js";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <Suspense fallback={<div>Loading translations...</div>}>
+    <Suspense fallback={<div></div>}>
       <App />
     </Suspense>
   </StrictMode>

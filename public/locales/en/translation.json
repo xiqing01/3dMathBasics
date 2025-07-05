@@ -6,13 +6,12 @@
   },
   "components": {
     "V01": {
-      "name": "Vector 01"
-    },
-    "WavingPlane": {
-      "name": "Waving Plane"
+      "name": "Vector 01",
+      "text": "Vector: A 'displacement' with a direction and magnitude."
     },
     "TSL01": {
-      "name": "TSL 01"
+      "name": "TSL 01",
+      "text":"Rotating color-changing octahedron"
     }
   },
   "languageSwitcher": {

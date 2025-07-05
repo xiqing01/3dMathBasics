@@ -2,7 +2,6 @@
 import { FractalNoiseMaterial } from './FractalNoiseMaterial'
 import { BackSide, FrontSide, DoubleSide } from 'three'
 
-
 // 地面组件
 const Ground = ({ children }) => {
   const isMobile = /Mobi|Android/i.test(navigator.userAgent);
@@ -77,7 +76,7 @@ const ShowcaseMiddle = () => {
         timeScale={0.11} 
         {...materialProps}
         />
-        
+       
       </mesh>
     </group>
   );
@@ -122,6 +121,7 @@ export default function Hall({children}) {
             <ShowcaseEnd />
             <ShowcaseMiddle />
             <ShowcaseGlass />
+            
             {children}
           </group>
         </Ground>
