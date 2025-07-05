@@ -6,8 +6,8 @@ import { BackSide, FrontSide, DoubleSide } from 'three'
 const Ground = ({ children }) => {
   const isMobile = /Mobi|Android/i.test(navigator.userAgent);
   const materialProps = isMobile 
-  ? { octaves: 2, warpingLevels: 1 } // Faster settings for mobile
-  : { octaves: 3, warpingLevels: 2 }; // Higher quality for desktop
+  ? { octaves: 2, warpingLevels: 1, timeScale: 0.0 } // Faster settings for mobile
+  : { octaves: 3, warpingLevels: 2, timeScale: 0.01 }; // Higher quality for desktop
 
   // useControls 返回一个包含所有属性当前值的对象
  return (
@@ -44,8 +44,8 @@ const Lighting = () => (
 const ShowcaseEnd = () => {
   const isMobile = /Mobi|Android/i.test(navigator.userAgent);
   const materialProps = isMobile 
-  ? { octaves: 3, warpingLevels: 1 } // Faster settings for mobile
-  : { octaves: 5, warpingLevels: 2 }; // Higher quality for desktop
+  ? { octaves: 3, warpingLevels: 1, timeScale: 0.0 } // Faster settings for mobile
+  : { octaves: 5, warpingLevels: 2, timeScale: 0.1 }; // Higher quality for desktop
 
 
   return (
