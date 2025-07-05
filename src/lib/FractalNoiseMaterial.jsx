@@ -29,11 +29,13 @@ import { BackSide, FrontSide, DoubleSide } from 'three'
 export const FractalNoiseMaterial = ({
   colorA = '#4b5563',
   colorB = '#93c5fd',
-  octaves = 8,
+  octaves = 5,
   lacunarity = 2.3,
   diminish = 0.45,
-  timeScale = 0.03,
+  timeScale = 0.01,
   side = FrontSide,
+  warpingLevels = 1, // 新增：控制扭曲层数，默认为 1
+  precision = 'mediump', // 新增：着色器精度，'mediump' 对移动端友好
   ...props 
 }) => {
   // --- Memoize TSL Node ---
@@ -64,7 +66,12 @@ export const FractalNoiseMaterial = ({
       
       // Apply triple domain warping: feed the noise result back into the input coordinate. This creates complex, swirling effects.
       // 应用三重领域扭曲：将噪声结果反馈回输入坐标。这会产生复杂的漩涡效果。
-      return fbm(p3.add(fbm(p3.add(fbm(p3)))));
+let warpedPosition = p3;
+for (let i = 0; i < warpingLevels; i++) {
+  warpedPosition = warpedPosition.add(fbm(warpedPosition));
+}
+
+     return fbm(warpedPosition)
     };
 
     // Scale the UV coordinates to adjust the size/frequency of the noise pattern. `uv()` gets the mesh's texture coordinates.
@@ -84,12 +91,12 @@ export const FractalNoiseMaterial = ({
     // 使用噪声值（`shade`）作为混合因子，在 colorA 和 colorB 之间进行线性插值。
     return mix(finalColorA, finalColorB, shade);
 
-  }, [colorA, colorB, octaves, lacunarity, diminish, timeScale]); // Dependency array for useMemo
+  }, [colorA, colorB, octaves, lacunarity, diminish, timeScale, warpingLevels]); // Dependency array for useMemo
 
   // --- Return R3F Component ---
   // Return the R3F material component, passing the generated TSL `colorNode` to its `colorNode` prop.
   // Spread other props like `roughness` to the material.
   // 返回 R3F 材质组件，将生成的 TSL `colorNode` 传递给其 `colorNode` 属性。
   // 同时将 `roughness` 等其他属性展开传递给该材质。
-  return <meshStandardNodeMaterial colorNode={colorNode} {...props} side={side} />;
+  return <meshStandardNodeMaterial colorNode={colorNode} {...props} side={side} precision={precision} />;
 };
