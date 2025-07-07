@@ -7,14 +7,18 @@
   "components": {
     "V01": {
       "name": "向量 01",
-      "text": "向量：一个方向和多远的“位移”。"
+      "text": "向量：一个方向和多远的“位移”。",
+      "Bug":""
     },
-    "WavingPlane": {
-      "name": "波浪平面"
+    "Dissolve": {
+      "name": "溶解",
+      "text": "溶解",
+      "Bug":"注意： 在特定视角下，物体可能因场景的渲染BUG而消失。溶解特效的算法本身无误。"
     },
     "TSL01": {
       "name": "TSL 01",
-      "text":"旋转变色八面体"
+      "text":"旋转变色八面体",
+      "Bug":""
     }
   },
   "languageSwitcher": {

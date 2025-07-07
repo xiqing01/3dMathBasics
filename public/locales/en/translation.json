@@ -7,11 +7,19 @@
   "components": {
     "V01": {
       "name": "Vector 01",
-      "text": "Vector: A 'displacement' with a direction and magnitude."
+      "text": "Vector: A 'displacement' with a direction and magnitude.",
+      "bug":""
+    },
+    "Dissolve": {
+      "name": "Dissolve",
+      "text": "Dissolve  ",
+      "bug":"Note: The object may disappear at certain angles due to a rendering bug in this scene. The dissolve effect's algorithm is correct."
     },
     "TSL01": {
       "name": "TSL 01",
-      "text":"Rotating color-changing octahedron"
+      "text":"Rotating color-changing octahedron",
+      "bug":""
+      
     }
   },
   "languageSwitcher": {

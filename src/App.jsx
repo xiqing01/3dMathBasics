@@ -99,11 +99,21 @@ export default function App() {
           </a>
           <div className="absolute bottom-7 left-1/2 -translate-x-1/2 z-50 text-amber-50  text-right md:text-xl text-sm">
             <p className="
+            text-center
               bg-gradient-to-r from-amber-100 via-blue-700 to-amber-50 
               bg-clip-text 
               text-transparent
             ">
               { ActiveComponentInfo?.textKey && t(ActiveComponentInfo.textKey) }
+            </p>
+            <br />
+            <p className="
+            text-center
+              bg-gradient-to-r from-red-200 via-red-400  to-red-600  
+              bg-clip-text 
+              text-transparent
+            ">
+              { ActiveComponentInfo?.bugKey && t(ActiveComponentInfo.bugKey) }
             </p>
           </div>
         </div>
